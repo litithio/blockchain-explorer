@@ -56,7 +56,7 @@ block contents
         td {{ block.extraData }}
       tr
         td Extra Data (Translated)
-        td {{ web3.toAscii(block.extraData) }}
+        td {{ web3.utils.hexToAscii(block.extraData) }}
       tr
         td logsBloom
         td

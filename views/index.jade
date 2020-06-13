@@ -118,7 +118,7 @@ block contents
 
     function getNetwork() {
       return new Promise((res, rej) => {
-        web3.eth.getProtocolVersion((error, result) => {
+        web3.eth.getChainId((error, result) => {
           if(error) rej(error);
           else res(result);
         });
@@ -212,7 +212,7 @@ block contents
       var self = app || this;
 
       //- getNode().then(r=>console.log(r));
-      self.api = web3.version.api;
+      self.api = web3.version;
       getNode().then(r =>  self.node = r);
       getNetwork().then(r =>  self.network = r);
       getHashrate().then(r =>  self.hashrate = r);
